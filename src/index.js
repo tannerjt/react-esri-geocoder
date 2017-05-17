@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { Component } from 'react'
+import store from './store'
+import { Provider } from 'react-redux'
+import Geocoder from './components/Geocoder'
 
-export default React.createClass({
+class EsriGeocoder extends Component {
   render() {
-    return <div>
-      <h2>Welcome to React components</h2>
-    </div>
+    return (
+      <Provider store={store}>
+        <Geocoder />
+      </Provider>
+    )
   }
-})
+};
+
+export default EsriGeocoder;
